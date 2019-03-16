@@ -1,0 +1,179 @@
+1  id vagrant
+    2  usermod -aG docker vagrant
+    3  sudo usermod -aG docker vagrant
+    4  id vagrant
+    5  docker ps
+    6  ls -ld /var/run/docker.sock
+    7  id vagrant
+    8  docker ps
+    9  exit
+   10  id
+   11  docker ps
+   12  ls -ld /var/run/docker.sock
+   13  docker info
+   14  clear
+   15  docker run hello-world
+   16  docker ps
+   17  docker ps -a
+   18  clear
+   19  docker search centos
+   20  docker pull centos
+   21  docker images
+   22  docker run centos
+   23  docker run centos hostname
+   24  docker run -it centos
+   25  docker pull nginx
+   26  docker run -d --name webserver nginx
+   27  docker ps
+   28  docker exec -it 8cb4359a542e /bin/bash
+   29  docker ps
+   30  docker attach webserver
+   31  docker start webserver
+   32  docker attach webserver
+   33  docker start webserver
+   34  docker ps
+   35  docker inspect webserver
+   36  docker login
+   37  docker ps
+   38  docker stats webserver
+   39  docker ps
+   40  docker stop nginx
+   41  docker stop webserver
+   42  docker start webserver
+   43  docker pause webserver
+   44  docker ps
+   45  docker exec -it webserver /bin/bash
+   46  docker unpause webserver
+   47  docker exec -it webserver /bin/bash
+   48  docker ps
+   49  docker kill webserver
+   50  docker ps
+   51  ps -a
+   52  docker ps -a
+   53  docker rm happy_stonebraker
+   54  docker ps -a
+   55  docker images
+   56  docker rmi hello-world
+   57  docker run it --name centosC1
+   58  docker run it --name centosC1 centos
+   59  docker run -it --name centosC1 centos
+   60  docker diff centosC1
+   61  docker commit centosC1 centos-net-v1.1
+   62  docker rm centosC1
+   63  docker run --rm -it --name centosC2 centos-net-v1.1
+   64  clear
+   65  docker run -d -p 5000:5000 --restart=always --name registry registry:2
+   66  docker ps
+   67  docker pull ubuntu:16.04
+   68  docker tag ubuntu:16.04 localhost:5000/ubuntu-nonprod
+   69  docker push localhost:5000/ubuntu-nonprod
+   70  docker images
+   71  docker image remove ubuntu:16.04
+   72  docker image remove localhost:5000/ubuntu-nonprod
+   73  docker images
+   74  docker image ls
+   75  docker pull localhost:5000/ubuntu-nonprod
+   76  docker images
+   77  curl localhost:5000/v2/
+   78  curl localhost:5000/v2/ubuntu-nonprod
+   79  curl localhost:5000/v2/ubuntu-nonprod/tags
+   80  curl localhost:5000/v2/
+   81  curl localhost:5000/
+   82  curl -v localhost:5000/
+   83  curl -v localhost:5000/v2/
+   84  curl -v localhost:5000/v2/_catalog
+   85  curl localhost:5000/v2/_catalog
+   86  curl localhost:5000/v2/_catalog/tags/list
+   87  curl localhost:5000/v2/_catalog/tags/
+   88  curl localhost:5000/v2/ubuntu-nonprod/tags/list
+   89  clear
+   90  history
+   91  clear
+   92  vi index.html
+   93  rm -f index.html
+   94  vi index.html
+   95  vi Dockerfile
+   96  mkdir repo
+   97  mv index.html
+   98  mv index.html repo/
+   99  mv Dockerfile repo/
+  100  cd repo/
+  101  cat index.html
+  102  at Dockerfile
+  103  cat Dockerfile
+  104  docker build -t webserver-image:v1
+  105  docker build -t webserver-image:v1 .
+  106  docker images
+  107  docker run -d -p 80:80 webserver-image:v1
+  108  docker ps
+  109  curl docker
+  110  docker stop bb9fe8bac47e
+  111  docker ps
+  112  curl docker
+  113  ifconfig
+  114  cat index.html
+  115  vi Dockerfile
+  116  docker build -t webserver-image:v2 .
+  117  docker ps
+  118  docker stop elegant_feynman
+  119  docker run -d webserver-image:v2
+  120  docker ps
+  121  docker network ls
+  122  docker network inspect bridge
+  123  cat /etc/hosts
+  124  clear
+  125  docker ps
+  126  docker exec -it gifted_brahmagupta /bin/bash
+  127  docker exec -it gifted_brahmagupta
+  128  docker run -it centos /bin/bash
+  129  docker network create isolated bridge
+  130  docker network ls
+  131  docker network create isolated_bridge
+  132  docker network ls
+  133  docker network inspect isolated_bridge
+  134  docker run -it --network isolated_bridge --name centos centos /bin/bash
+  135  docker -d run -it --network isolated_bridge --name centos centos /bin/bash
+  136  docker run -d  --network isolated_bridge --name centos centos /bin/bash
+  137  docker network connect isolated_bridge centos
+  138  docker ps
+  139  clear
+  140  docker network disconnect isolated_bridge centos
+  141  docker network rm isolated_bridge
+  142  clear
+  143  curl  -L "https://github.com/docker/compose/releases/download/1.22.0/docker- compose-$(uname  -s)-$(uname  -m)"  -o  /usr/local/bin/docker-compose
+  144  sudo curl  -L "https://github.com/docker/compose/releases/download/1.22.0/docker- compose-$(uname  -s)-$(uname  -m)"  -o  /usr/local/bin/docker-compose
+  145  ls -ld /usr/local/bin/docker-compose
+  146  chmod +x /usr/local/bin/docker-compose
+  147  sudo chmod +x /usr/local/bin/docker-compose
+  148  rm -rf
+  149  ls -ltr
+  150  rm *
+  151  ls -ltr
+  152  clear
+  153  vi Dockerfile
+  154  vi docker-compose.yml
+  155  cat docker-compose.yml
+  156  mkdir sshd
+  157  mv Dockerfile sshd
+  158  docker-compose up -d
+  159  vi docker-compose.yml
+  160  ls -ld /usr/local/bin/docker-compose
+  161  cd ..
+  162  mv repo/ docker-compose
+  163  cd docker-compose/
+  164  ls -ltr
+  165  docker-compose up -d
+  166  rm -f /usr/local/bin/docker-compose
+  167  sudo rm -f /usr/local/bin/docker-compose
+  168  sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  169  chmod +x /usr/local/bin/docker-compose
+  170  sudo chmod +x /usr/local/bin/docker-compose
+  171  docker-compose up -d
+  172  vi sshd/Dockerfile
+  173  docker-compose up -d
+  174  vi sshd/Dockerfile
+  175  docker-compose up -d
+  176  ssh -p 2222 student@localhost
+  177  docker ps
+  178  docker-compose down
+  179  history
